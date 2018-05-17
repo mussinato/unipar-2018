@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -25,7 +26,29 @@ public class Principal {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 		
+		System.out.println("CONSULTANDO PESSOAS");
+		System.out.println("---------------------");
 		
+		List<Pessoa> pessoas = dao.buscarTodos();
+		for (Pessoa p : pessoas) {
+			System.out.println("Codigo: "+p.getCodigo()
+								+" Nome: "+p.getPrimeiroNome());
+			System.out.println("---------------------");
+		}
+		
+		System.out.println("CONSULTANDO PESSOA POR CODIGO");
+		Pessoa pessoaConsulta = dao.buscarPorCodigo(1L);
+		System.out.println("Nome: "+pessoaConsulta.getPrimeiroNome());
+		
+		System.out.println("CONSULTANDO PESSOA POR NOME");
+		List<Pessoa> pessoas2 = dao.buscarPorNome("ato");
+		for (Pessoa p : pessoas2) {
+			System.out.println("Codigo: "+p.getCodigo()
+								+" Nome: "+p.getPrimeiroNome());
+			System.out.println("---------------------");
+		}
+		
+		System.exit(0);
 	}
 
 }
