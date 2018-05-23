@@ -3,17 +3,31 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import br.unipar.dao.CidadeDAO;
 import br.unipar.dao.PessoaDAO;
+import br.unipar.domain.Cidade;
 import br.unipar.domain.Pessoa;
 
 public class Principal {
 
 	public static void main(String[] args) {
+		Cidade cid = new Cidade();
+		cid.setNome("CIANORTE");
+		cid.setUf("PR");
+		CidadeDAO cidDAO = new CidadeDAO();
+		try {
+			cid = cidDAO.salvar(cid);
+		} catch (Exception e1) {
+			JOptionPane.showMessageDialog(null, e1.getMessage());
+			e1.printStackTrace();
+		}
+		
 		Pessoa pes = new Pessoa();
 		pes.setPrimeiroNome("Renato");
 		pes.setUltimoNome("Alterado");
 		pes.setDataNascimento(new Date());
 		pes.setAltura(1.9);
+		pes.setCidade(cid);
 		
 		PessoaDAO dao = new PessoaDAO();
 		try {

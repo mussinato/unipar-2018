@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,6 +29,10 @@ public class Pessoa {
 	@Column(name="data_nascimento", nullable=false)
 	@Temporal(TemporalType.DATE)
 	private Date dataNascimento;
+	
+	@ManyToOne
+	@JoinColumn(name="cidade") // alterar o nome do campo da FK
+	private Cidade cidade;
 	
 	@Column(scale=1, precision=2, nullable=true)
 	private Double altura;
@@ -69,6 +75,14 @@ public class Pessoa {
 
 	public void setAltura(Double altura) {
 		this.altura = altura;
+	}
+
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
 	}
 	
 }
