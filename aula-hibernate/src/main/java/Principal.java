@@ -4,9 +4,11 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import br.unipar.dao.CidadeDAO;
+import br.unipar.dao.GenericDAO;
 import br.unipar.dao.PessoaDAO;
 import br.unipar.domain.Cidade;
 import br.unipar.domain.Pessoa;
+import br.unipar.domain.Veiculo;
 
 public class Principal {
 
@@ -35,6 +37,18 @@ public class Principal {
 			
 			JOptionPane.showMessageDialog(null, 
 					"Pessoa "+pes.getCodigo()+" salva com sucesso.");
+		} catch (Exception e) {
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
+		
+		Veiculo veiculo = new Veiculo();
+		veiculo.setPlaca("ABC-4321");
+		veiculo.setRenavam("0033344545");
+		veiculo.setPessoa(pes);
+		GenericDAO<Veiculo> gDAO = new GenericDAO<Veiculo>();
+		try {
+			veiculo = gDAO.salvar(veiculo);
 		} catch (Exception e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, e.getMessage());
