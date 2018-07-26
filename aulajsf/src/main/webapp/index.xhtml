@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Página Inicial</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Página Inicial</title>
 </h:head>
 <h:body>
-	<h:outputText value="Página Inicial"/>			
+	<p:panelGrid columns="2">
+		<p:outputLabel value="Código" />
+		<p:inputNumber id="codigo" />
+
+		<p:outputLabel value="Nome" />
+		<p:inputText id="nome" />
+
+		<p:outputLabel value="Partido" />
+		<p:inputText id="partido" />
+
+		<p:outputLabel value="Cargo" />
+		<p:selectOneMenu id="cargo">
+			<f:selectItem itemLabel="" itemValue="" />
+			<f:selectItem itemLabel="Presidente" itemValue="presidente" />
+			<f:selectItem itemLabel="Senador" itemValue="senador" />
+			<f:selectItem itemLabel="Deputado Federal" itemValue="deputado_federal" />
+		</p:selectOneMenu>
+	</p:panelGrid>
+	
+	<p:commandButton value="Incluir" />
+	<p:commandButton value="Salvar" />
+	<p:commandButton value="Cancelar" />
 </h:body>
 </html>
