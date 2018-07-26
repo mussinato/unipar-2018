@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.unipar</groupId>
-	<artifactId>aulajsf</artifactId>
+	<artifactId>jsfaula2</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>aulajsf Maven Webapp</name>
+	<name>jsfaula2 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -42,8 +42,13 @@
 			<artifactId>jsf-impl</artifactId>
 			<version>2.2.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.2</version>
+		</dependency>
 	</dependencies>
 	<build>
-		<finalName>aulajsf</finalName>
+		<finalName>jsfaula2</finalName>
 	</build>
 </project>
