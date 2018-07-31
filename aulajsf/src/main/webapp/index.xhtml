@@ -9,27 +9,32 @@
 	<title>Página Inicial</title>
 </h:head>
 <h:body>
-	<p:panelGrid columns="2">
-		<p:outputLabel value="Código" />
-		<p:inputNumber id="codigo" />
+	<h:form>
+		<div style="float:left; width: 20%;">
+			<p:menu style="width: 95%;">
+				<p:submenu label="Candidato">
+					<p:menuitem value="Cadastrar" />
+					<p:menuitem value="Listar" />
+				</p:submenu>
+				<p:submenu label="Eleições">
+					<p:menuitem value="Cadastrar" />
+					<p:menuitem value="Listar" />
+				</p:submenu>
+				<p:submenu label="Links">
+					<p:menuitem value="Tela de votação" />
+				</p:submenu>
+			</p:menu>
+		</div>
 
-		<p:outputLabel value="Nome" />
-		<p:inputText id="nome" />
-
-		<p:outputLabel value="Partido" />
-		<p:inputText id="partido" />
-
-		<p:outputLabel value="Cargo" />
-		<p:selectOneMenu id="cargo">
-			<f:selectItem itemLabel="" itemValue="" />
-			<f:selectItem itemLabel="Presidente" itemValue="presidente" />
-			<f:selectItem itemLabel="Senador" itemValue="senador" />
-			<f:selectItem itemLabel="Deputado Federal" itemValue="deputado_federal" />
-		</p:selectOneMenu>
-	</p:panelGrid>
-	
-	<p:commandButton value="Incluir" />
-	<p:commandButton value="Salvar" />
-	<p:commandButton value="Cancelar" />
+		<div style="float:left; width: 80%;">
+			<div style="padding-left: 10px;">
+				<p:panel id="basic" header="Página inicial" style="margin-bottom:20px">
+					<h:panelGrid columns="2" style="width:100%;">
+						<p>Sistema desenvolvido em sala de uma réplica de urna eletrônica.</p>
+					</h:panelGrid>
+    			</p:panel>					
+			</div>
+		</div>
+	</h:form>
 </h:body>
 </html>
