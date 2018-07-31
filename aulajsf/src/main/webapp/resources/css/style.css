@@ -1,0 +1,17 @@
+.ui-widget {
+	font-size: 14px;
+}
+
+div.content-left {
+	float:left; 
+	width: 20%;
+}
+
+div.content-right {
+	float:left; 
+	width: 80%;
+}
+
+.inner-content {
+	padding-left: 10px;
+}
