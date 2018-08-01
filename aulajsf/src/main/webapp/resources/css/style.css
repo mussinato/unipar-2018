@@ -15,3 +15,7 @@ div.content-right {
 .inner-content {
 	padding-left: 10px;
 }
+
+.ui-panel-content {
+	padding: 0px !important;
+}
