@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Página Inicial</title>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body>
+	<h:form>
+		<div class="content-left">
+			<p:menu style="width: 95%;" toggleable="true">
+				<p:menuitem value="Página Inicial" action="index.xhtml" />
+				<p:submenu label="Candidato">
+					<p:menuitem value="Cadastrar" />
+					<p:menuitem value="Listar" />
+				</p:submenu>
+				<p:submenu label="Eleições">
+					<p:menuitem value="Cadastrar" />
+					<p:menuitem value="Listar" />
+				</p:submenu>
+				<p:submenu label="Links">
+					<p:menuitem value="Tela de votação" />
+				</p:submenu>
+			</p:menu>
+		</div>
+
+		<div class="content-right">
+			<div class="inner-content">
+				<p:panel id="basic" header="Cadastro de Candidato" style="margin-bottom:20px">
+					<p:toolbar>
+			        <f:facet name="left">
+			            <p:commandButton type="button" title="Save" icon="ui-icon-disk" value="Salvar" />
+			        </f:facet>
+			    </p:toolbar>
+				<h:panelGrid columns="2" style="width:100%;">
+					<h:panelGrid columns="2" style="width:100%; padding: .5em 1em;">
+						<p:outputLabel for="codigo" value="Código"/>
+						<p:inputText id="codigo" />
+						
+						<p:outputLabel for="nome" value="Nome"/>
+						<p:inputText id="nome" />
+						
+						<p:outputLabel for="cargo" value="Cargo"/>
+						<p:selectOneMenu id="cargo" style="width:125px">
+				            <f:selectItem itemLabel="" itemValue="" />
+				            <f:selectItem itemLabel="Deputado Federal" itemValue="DEPUTADO_FEDERAL" />
+				            <f:selectItem itemLabel="Deputado Estadual" itemValue="DEPUTADO_ESTADUAL" />
+				            <f:selectItem itemLabel="Senador" itemValue="SENADOR" />
+				            <f:selectItem itemLabel="Governador" itemValue="GOVERNADOR" />
+				            <f:selectItem itemLabel="Presidente" itemValue="PRESIDENTE" />
+				            <f:selectItem itemLabel="Senador" itemValue="SENADOR" />
+				            <f:selectItem itemLabel="Prefeito" itemValue="PREFEITO" />
+				            <f:selectItem itemLabel="Vereador" itemValue="VEREADOR" />
+				        </p:selectOneMenu>
+						
+						<p:outputLabel for="partido" value="Partido"/>
+						<p:inputText id="partido" />
+					</h:panelGrid>
+					<h:panelGrid columns="1">
+						<p:graphicImage name="images/foto-candidato.jpg" width="200" />
+						<p:fileUpload mode="simple" skinSimple="true" label="Selecionar imagem"/>
+					</h:panelGrid>					
+				</h:panelGrid>
+    			</p:panel>					
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>
