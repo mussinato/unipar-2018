@@ -15,22 +15,23 @@
 		<ui:define name="titulo">Cadastro de Candidato</ui:define>
 		<ui:define name="conteudo">
 			<h:form>
+				<p:growl id="growl" showDetail="true" />
 				<p:toolbar>
 					<f:facet name="left">
-						<p:commandButton title="Save" icon="ui-icon-disk"
-							value="Salvar" />
+						<p:commandButton title="Save" icon="ui-icon-disk" update="growl codigo nome cargo partido"
+							value="Salvar" actionListener="#{cadastroCandidatoBean.salvar}"  />
 					</f:facet>
 				</p:toolbar>
 				<h:panelGrid columns="2" style="width:100%;">
 					<h:panelGrid columns="2" style="width:100%; padding: .5em 1em;">
 						<p:outputLabel for="codigo" value="Código" />
-						<p:inputText id="codigo" />
+						<p:inputText id="codigo" value="#{cadastroCandidatoBean.candidato.codigo}" />
 		
 						<p:outputLabel for="nome" value="Nome" />
-						<p:inputText id="nome" />
+						<p:inputText id="nome" value="#{cadastroCandidatoBean.candidato.nome}" />
 		
 						<p:outputLabel for="cargo" value="Cargo" />
-						<p:selectOneMenu id="cargo" style="width:125px">
+						<p:selectOneMenu id="cargo" value="#{cadastroCandidatoBean.candidato.cargo}" style="width:125px">
 							<f:selectItem itemLabel="" itemValue="" />
 							<f:selectItem itemLabel="Deputado Federal"
 								itemValue="DEPUTADO_FEDERAL" />
@@ -45,7 +46,7 @@
 						</p:selectOneMenu>
 		
 						<p:outputLabel for="partido" value="Partido" />
-						<p:inputText id="partido" />
+						<p:inputText id="partido" value="#{cadastroCandidatoBean.candidato.partido}" />
 					</h:panelGrid>
 					<h:panelGrid columns="1">
 						<p:graphicImage name="images/foto-candidato.jpg" width="200" />

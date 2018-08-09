@@ -4,7 +4,7 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <properties>
       <property name="javax.persistence.jdbc.url" 
-      		value="jdbc:mysql://localhost:3306/hibernate"/>
+      		value="jdbc:mysql://localhost:3306/urnipar"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" 
       		value="com.mysql.jdbc.Driver"/>

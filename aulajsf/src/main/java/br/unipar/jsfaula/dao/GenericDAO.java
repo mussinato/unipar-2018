@@ -12,7 +12,6 @@ public class GenericDAO<T> {
 	private EntityManager em;
 	private Session session;
 
-	@SuppressWarnings("unchecked")
 	public GenericDAO() {
 		em = Conexao.getConexao(); 
 		session = em.unwrap(Session.class);
