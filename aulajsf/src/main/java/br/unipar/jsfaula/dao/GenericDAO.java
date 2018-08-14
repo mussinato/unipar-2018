@@ -46,4 +46,8 @@ public class GenericDAO<T> {
 	public List<T> buscarTodos(Class<T> entidade){
 		return session.createCriteria(entidade).list();
 	}
+	
+	public T buscarPorCodigo(Class<T> entidade, Object primaryKey) {
+		return em.find(entidade, primaryKey);
+	}
 }
