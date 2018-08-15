@@ -13,7 +13,25 @@
 		<ui:define name="titulo">Listar Candidato</ui:define>
 		<ui:define name="conteudo">
 			<h:form>
-				
+				<p:dataTable id="lista" var="can" value="#{listagemCandidatoBean.candidatos}">
+					<p:column headerText="Código" filterBy="#{can.codigo}">
+						<h:outputText value="#{can.codigo}" />
+					</p:column>
+					<p:column headerText="Nome" filterBy="#{can.nome}" filterMatchMode="contains">
+						<h:outputText value="#{can.nome}" />
+					</p:column>
+					<p:column headerText="Cargo" filterBy="#{can.cargo}">
+						<h:outputText value="#{can.cargo}" />
+					</p:column>
+					<p:column headerText="Partido" filterBy="#{can.partido}">
+						<h:outputText value="#{can.partido}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Editar" action="cadastro-candidato.xhtml">
+							<f:param name="codcandidato" value="#{can.codigo}" />
+						</p:commandButton>
+					</p:column>
+				</p:dataTable>
 			</h:form>
 		</ui:define>
 	</ui:composition>

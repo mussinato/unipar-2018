@@ -1,5 +1,7 @@
 package br.unipar.jsfaula.bean;
 
+import java.util.Map;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.bean.ManagedBean;
@@ -14,6 +16,18 @@ import br.unipar.jsfaula.domain.Candidato;
 public class CadastroCandidatoBean {
 
 	private Candidato candidato = new Candidato();
+	
+	public CadastroCandidatoBean() {
+		Map<String, String> params = FacesContext.getCurrentInstance()
+											.getExternalContext()
+											.getRequestParameterMap();
+		String codigo = params.get("codcandidato");
+		
+		if (codigo != null && !codigo.equals("")) {
+			GenericDAO<Candidato> dao = new GenericDAO<>();
+			candidato = dao.buscarPorCodigo(Candidato.class, Long.parseLong(codigo));
+		}
+	}
 	
 	public void salvar() {
 		GenericDAO<Candidato> dao = new GenericDAO<>();
