@@ -13,7 +13,22 @@
 		<ui:define name="titulo">Cadastro de Eleição</ui:define>
 		<ui:define name="conteudo">
 			<h:form>
-				
+				<p:growl id="growl" showDetail="true" />
+				<p:toolbar>
+					<f:facet name="left">
+						<p:commandButton title="Save" icon="ui-icon-disk" update="growl codigo data"
+							value="Salvar" actionListener="#{cadastroEleicaoBean.salvar}"  />
+					</f:facet>
+				</p:toolbar>
+				<h:panelGrid columns="2" style="width:100%;">
+					<h:panelGrid columns="2" style="width:100%; padding: .5em 1em;">
+						<p:outputLabel for="codigo" value="Código" />
+						<p:inputText id="codigo" value="#{cadastroEleicaoBean.eleicao.codigo}" disabled="true" />
+		
+						<p:outputLabel for="data" value="Data" />
+						<p:calendar id="data" value="#{cadastroEleicaoBean.eleicao.data}" pattern="dd/MM/yyyy" mask="true" />
+					</h:panelGrid>					
+				</h:panelGrid>
 			</h:form>
 		</ui:define>
 	</ui:composition>

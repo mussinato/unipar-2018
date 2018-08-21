@@ -13,7 +13,19 @@
 		<ui:define name="titulo">Listar Eleição</ui:define>
 		<ui:define name="conteudo">
 			<h:form>
-				
+				<p:dataTable id="lista" var="can" value="#{listagemEleicaoBean.eleicoes}">
+					<p:column headerText="Código" filterBy="#{can.codigo}">
+						<h:outputText value="#{can.codigo}" />
+					</p:column>
+					<p:column headerText="Data" filterBy="#{can.dataStr}" >
+						<h:outputText value="#{can.dataStr}" />
+					</p:column>
+					<p:column>
+						<p:commandButton value="Editar" action="cadastro-eleicao.xhtml">
+							<f:param name="codeleicao" value="#{can.codigo}" />
+						</p:commandButton>
+					</p:column>
+				</p:dataTable>
 			</h:form>
 		</ui:define>
 	</ui:composition>
