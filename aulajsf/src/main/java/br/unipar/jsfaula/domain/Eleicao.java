@@ -33,6 +33,9 @@ public class Eleicao {
 		this.data = data;
 	}
 	public String getDataStr() {
+		if (data == null) {
+			return "";
+		}
 		return new SimpleDateFormat("dd/MM/yyyy").format(data);
 	}
 	

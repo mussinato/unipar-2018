@@ -50,4 +50,10 @@ public class GenericDAO<T> {
 	public T buscarPorCodigo(Class<T> entidade, Object primaryKey) {
 		return em.find(entidade, primaryKey);
 	}
+
+	protected Session getSession() {
+		return session;
+	}
+	
+	
 }

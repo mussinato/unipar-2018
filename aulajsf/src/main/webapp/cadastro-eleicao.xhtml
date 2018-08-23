@@ -16,7 +16,7 @@
 				<p:growl id="growl" showDetail="true" />
 				<p:toolbar>
 					<f:facet name="left">
-						<p:commandButton title="Save" icon="ui-icon-disk" update="growl codigo data"
+						<p:commandButton title="Save" icon="ui-icon-disk" update="growl codigo data pickListCargos pickListCandidatos"
 							value="Salvar" actionListener="#{cadastroEleicaoBean.salvar}"  />
 					</f:facet>
 				</p:toolbar>
@@ -27,7 +27,22 @@
 		
 						<p:outputLabel for="data" value="Data" />
 						<p:calendar id="data" value="#{cadastroEleicaoBean.eleicao.data}" pattern="dd/MM/yyyy" mask="true" />
-					</h:panelGrid>					
+					</h:panelGrid>	
+					<br/>
+					<p:fieldset legend="Selecione os cargos para a eleição" style="margin-bottom:20px">
+						<p:pickList id="pickListCargos" value="#{cadastroEleicaoBean.cargos}" var="cargo" 
+						    itemLabel="#{cargo}" itemValue="#{cargo}" showTargetControls="true" showSourceFilter="true" 
+						    showTargetFilter="true" filterMatchMode="contains">
+							<p:ajax event="transfer" listener="#{cadastroEleicaoBean.onTransfer}" update="pickListCandidatos" />    
+						</p:pickList>
+					</p:fieldset>
+					<br/>
+					<p:fieldset legend="Selecione os candidatos para a eleição" style="margin-bottom:20px">
+						<p:pickList id="pickListCandidatos" value="#{cadastroEleicaoBean.candidatos}" var="candidato" 
+						    itemLabel="#{candidato.codigo} - #{candidato.nome} (#{candidato.partido}) - #{candidato.cargo}" itemValue="#{candidato}"
+						    converter="candidatoConverter" showTargetControls="true" showSourceFilter="true" 
+						    showTargetFilter="true" filterMatchMode="contains" />
+					</p:fieldset>
 				</h:panelGrid>
 			</h:form>
 		</ui:define>

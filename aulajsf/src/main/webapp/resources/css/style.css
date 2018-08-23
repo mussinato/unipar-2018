@@ -2,6 +2,14 @@
 	font-size: 14px;
 }
 
+.ui-picklist-list {
+	width: 100% !important;
+}
+
+.ui-picklist {
+	width: 100% !important;
+}
+
 div.content-left {
 	float:left; 
 	width: 20%;
@@ -19,3 +27,4 @@ div.content-right {
 .ui-panel-content {
 	padding: 0px !important;
 }
+
