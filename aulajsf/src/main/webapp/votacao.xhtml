@@ -8,11 +8,95 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Votação | URNIPAR</title>
+	<link rel="shortcut icon" type="image/x-icon"
+		href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpsAkCXgK4QTyjOPPgYDPlsm35cfyK5kEEjfTimQeivFL2pdhY"></link>
 	<h:outputStylesheet library="css" name="votacao.css" />
 </h:head>
 <h:body>
-	<h:form>
-		<h1>TELA DE VOTAÇÃO</h1>
+	<h:form prependId="false">
+		<center>
+			<h1>TELA DE VOTAÇÃO</h1>
+		</center>
+		<p:panel id="basic">
+			<h3>Seu voto vai para</h3>
+			<h2 id="prefeito-text">
+				PREFEITO
+			</h2>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<label id="margin-label" class="tm-label">Número:</label>
+			<p:inputText id="i-numero" styleClass="tm-label"
+				value="#{votacaoBean.numero}" style="text-align: center" />
+			<br />
+			<br />
+			<label id="margin-label">Nome:</label>
+			<label id="margin-label">GUILHERME DOMINGUES</label>
+			<br />
+			<br />
+			<label id="margin-label">Partido:</label>
+			<label class="tm-label">SORRIDENTE</label>
+			<br />
+			<br />
+			<br />
+			<hr></hr>
+			<h5>Aperte a tecla:</h5>
+			<h6>
+				<span id="green">VERDE</span> para confirmar
+			</h6>
+			<h6>
+				<span id="orange">LARANJA</span> para corrigir
+			</h6>
+		</p:panel>
+		<p:panel id="botoes">
+			<p:commandButton value="1" id="botao1"
+				actionListener="#{votacaoBean.setNumero1()}" update="i-numero" />
+			<p:commandButton value="2" id="botao2"
+				actionListener="#{votacaoBean.setNumero2()}" update="i-numero" />
+			<p:commandButton value="3" id="botao3"
+				actionListener="#{votacaoBean.setNumero3()}" update="i-numero" />
+			<br />
+			<br />
+			<br />
+			<p:commandButton value="4" id="botao4"
+				actionListener="#{votacaoBean.setNumero4()}" update="i-numero" />
+			<p:commandButton value="5" id="botao5"
+				actionListener="#{votacaoBean.setNumero5()}" update="i-numero" />
+			<p:commandButton value="6" id="botao6"
+				actionListener="#{votacaoBean.setNumero6()}" update="i-numero" />
+			<br />
+			<br />
+			<br />
+			<p:commandButton value="7" id="botao7"
+				actionListener="#{votacaoBean.setNumero7()}" update="i-numero" />
+			<p:commandButton value="8" id="botao8"
+				actionListener="#{votacaoBean.setNumero8()}" update="i-numero" />
+			<p:commandButton value="9" id="botao9"
+				actionListener="#{votacaoBean.setNumero9()}" update="i-numero" />
+			<br />
+			<br />
+			<br />
+			<center>
+				<p:commandButton value="0" id="botao0"
+					actionListener="#{votacaoBean.setNumeroZero()}" style="width:140px"
+					update="i-numero" />
+			</center>
+			<br />
+			<br />
+			<br />
+			<br />
+			<p:commandButton value="BRANCO" id="btn-branco"
+				style="width:132px;height:80px;" />
+			<p:commandButton value="CORRIGE" id="btn-corrige"
+				actionListener="#{votacaoBean.corrige()}"
+				style="width:132px;height:80px;" update="i-numero" />
+			<p:commandButton value="CONFIRMAR" id="btn-confirmar"
+				style="width:132px;height:80px;" />
+
+		</p:panel>
+
 	</h:form>
 </h:body>
 </html>

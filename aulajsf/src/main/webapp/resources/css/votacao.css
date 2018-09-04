@@ -1,3 +1,30 @@
-h1 {
-	background-color: red;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru');
+@import url('https://fonts.googleapis.com/css?family=Nunito:700');
+
+h1 {font-family: 'Montserrat', sans-serif;}
+input{font-family: 'Montserrat', sans-serif;align="center"font-size: 20px;}
+
+#prefeito-text{margin-left:160px}
+#margin-label{margin-left:20px;}
+.tm-label{margin-left:10px}
+#basic{width:800px;height:560px;float:left;border-color:black;border-radius: 20px}
+#i-numero{height:30px;border-radius: 10px;width:200px;font-family: 'Kosugi Maru', sans-serif; font-size:30px;}
+#green{background:green !important;border-radius: 10px;color:black; font-size:13px; border:1px solid green; padding:10px}
+#orange{background:orange !important;border-radius: 10px;margin-top:20px;color:black; font-size:13px; border:1px solid orange; padding:10px}
+#botoes{width:500px;height:560px;float:right;border-color:black;border-radius: 20px}
+#btn-branco{border-radius: 10px;border-radius: 10px;margin-left:30px;background:white !important;color:black}
+#btn-corrige{border-color:orange;border-radius: 10px;margin-left:10px;background:orange !important;color:black}
+#btn-confirmar{border-color:green;margin-left:10px;background: green !important;color:black}
+.ui-button{width:110px;height:50px}
+#botao1{margin-left:30px;margin-top:40px;background:white !important;color:black;font-size:30px;border-color:black}
+#botao2{margin-left:30px;margin-top:40px;background:white !important;color:black;font-size:30px;border-color:black}
+#botao3{margin-left:30px;margin-top:40px;background:white !important;color:black;font-size:30px;border-color:black}
+#botao4{margin-left:30px;background:white !important;color:black;font-size:30px;border-color:black}
+#botao5{margin-left:30px;background:white !important;color:black;font-size:30px;border-color:black}
+#botao6{margin-left:30px;background:white !important;color:black;font-size:30px;border-color:black}
+#botao7{margin-left:30px;background:white !important;color:black;font-size:30px;border-color:black}
+#botao8{margin-left:30px;background:white !important;color:black;font-size:30px;border-color:black}
+#botao9{margin-left:30px;background:white !important;color:black;font-size:30px;border-color:black}
+#botao0{background:white !important;color:black;font-size:30px;border-color:black}
+#img-candidato{margin-left:15px;border-radius:10px;border:1px solid black}
