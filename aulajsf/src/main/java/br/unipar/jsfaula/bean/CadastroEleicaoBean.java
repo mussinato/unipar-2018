@@ -64,10 +64,10 @@ public class CadastroEleicaoBean {
 			eleicao = new Eleicao();
 			carregaTodosCandidatos(null);
 			carregaTodosCargos();
-	        showMessage("Sucesso", "EleiÃ§Ã£o cadastrada.", FacesMessage.SEVERITY_INFO);
+	        showMessage("Eleição cadastrada.", FacesMessage.SEVERITY_INFO);
 		} catch (Exception e) {
 			e.printStackTrace();
-	        showMessage("Erro", e.getMessage(), FacesMessage.SEVERITY_ERROR);
+	        showMessage(e.getMessage(), FacesMessage.SEVERITY_ERROR);
 		}
 	}
 
@@ -97,10 +97,10 @@ public class CadastroEleicaoBean {
 		candidatos = new DualListModel<Candidato>(source, target);
 	}
 	
-	private void showMessage(String titulo, String mensagem, Severity severity) {
+	private void showMessage(String mensagem, Severity severity) {
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, 
-        		new FacesMessage(severity,titulo,mensagem));
+        		new FacesMessage(severity,mensagem,null));
 	}
 	
 	public void onTransfer(TransferEvent event) {

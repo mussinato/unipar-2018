@@ -13,7 +13,8 @@
 		<ui:define name="titulo">Cadastro de Eleição</ui:define>
 		<ui:define name="conteudo">
 			<h:form>
-				<p:growl id="growl" showDetail="true" />
+				<p:messages id="growl" closable="true" />
+				
 				<p:toolbar>
 					<f:facet name="left">
 						<p:commandButton title="Save" icon="ui-icon-disk" update="growl codigo data pickListCargos pickListCandidatos"
@@ -26,13 +27,16 @@
 						<p:inputText id="codigo" value="#{cadastroEleicaoBean.eleicao.codigo}" disabled="true" />
 		
 						<p:outputLabel for="data" value="Data" />
-						<p:calendar id="data" value="#{cadastroEleicaoBean.eleicao.data}" pattern="dd/MM/yyyy" mask="true" />
+						<p:calendar id="data" value="#{cadastroEleicaoBean.eleicao.data}" 
+						   required="true" requiredMessage="Informe a data"
+						   pattern="dd/MM/yyyy" mask="true" />
 					</h:panelGrid>	
 					<br/>
 					<p:fieldset legend="Selecione os cargos para a eleição" style="margin-bottom:20px">
 						<p:pickList id="pickListCargos" value="#{cadastroEleicaoBean.cargos}" var="cargo" 
 						    itemLabel="#{cargo}" itemValue="#{cargo}" showTargetControls="true" showSourceFilter="true" 
-						    showTargetFilter="true" filterMatchMode="contains">
+						    showTargetFilter="true" filterMatchMode="contains"
+						    required="true" requiredMessage="Selecione um cargo">
 							<p:ajax event="transfer" listener="#{cadastroEleicaoBean.onTransfer}" update="pickListCandidatos" />    
 						</p:pickList>
 					</p:fieldset>
@@ -41,7 +45,8 @@
 						<p:pickList id="pickListCandidatos" value="#{cadastroEleicaoBean.candidatos}" var="candidato" 
 						    itemLabel="#{candidato.codigo} - #{candidato.nome} (#{candidato.partido}) - #{candidato.cargo}" itemValue="#{candidato}"
 						    converter="candidatoConverter" showTargetControls="true" showSourceFilter="true" 
-						    showTargetFilter="true" filterMatchMode="contains" />
+						    showTargetFilter="true" filterMatchMode="contains"
+						    required="true" requiredMessage="Selecione um candidato" />
 					</p:fieldset>
 				</h:panelGrid>
 			</h:form>

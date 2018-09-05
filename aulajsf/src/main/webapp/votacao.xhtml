@@ -51,35 +51,35 @@
 			</h6>
 		</p:panel>
 		<p:panel id="botoes">
-			<p:commandButton value="1" id="botao1"
+			<p:commandButton value="1" id="botao1" update="i-numero"
 				actionListener="#{votacaoBean.setNumero1()}" />
-			<p:commandButton value="2" id="botao2"
+			<p:commandButton value="2" id="botao2" update="i-numero"
 				actionListener="#{votacaoBean.setNumero2()}"  />
-			<p:commandButton value="3" id="botao3"
+			<p:commandButton value="3" id="botao3" update="i-numero"
 				actionListener="#{votacaoBean.setNumero3()}" />
 			<br />
 			<br />
 			<br />
-			<p:commandButton value="4" id="botao4"
+			<p:commandButton value="4" id="botao4" update="i-numero"
 				actionListener="#{votacaoBean.setNumero4()}"  />
-			<p:commandButton value="5" id="botao5"
+			<p:commandButton value="5" id="botao5" update="i-numero"
 				actionListener="#{votacaoBean.setNumero5()}" />
-			<p:commandButton value="6" id="botao6"
+			<p:commandButton value="6" id="botao6" update="i-numero"
 				actionListener="#{votacaoBean.setNumero6()}"  />
 			<br />
 			<br />
 			<br />
-			<p:commandButton value="7" id="botao7"
+			<p:commandButton value="7" id="botao7" update="i-numero"
 				actionListener="#{votacaoBean.setNumero7()}"  />
-			<p:commandButton value="8" id="botao8"
+			<p:commandButton value="8" id="botao8" update="i-numero"
 				actionListener="#{votacaoBean.setNumero8()}"  />
-			<p:commandButton value="9" id="botao9"
+			<p:commandButton value="9" id="botao9" update="i-numero"
 				actionListener="#{votacaoBean.setNumero9()}" />
 			<br />
 			<br />
 			<br />
 			<center>
-				<p:commandButton value="0" id="botao0"
+				<p:commandButton value="0" id="botao0" update="i-numero"
 					actionListener="#{votacaoBean.setNumeroZero()}" style="width:140px" />
 			</center>
 			<br />
@@ -90,7 +90,7 @@
 				style="width:132px;height:80px;" />
 			<p:commandButton value="CORRIGE" id="btn-corrige"
 				actionListener="#{votacaoBean.corrige()}"
-				style="width:132px;height:80px;" />
+				style="width:132px;height:80px;" update="i-numero" />
 			<p:commandButton value="CONFIRMAR" id="btn-confirmar"
 				style="width:132px;height:80px;" />
 
