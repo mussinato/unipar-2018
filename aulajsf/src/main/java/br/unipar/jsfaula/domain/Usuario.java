@@ -10,7 +10,7 @@ public class Usuario {
 	@Id
 	private Long codigo;
 	private String usuario;
-	private String sennha;
+	private String senha;
 	
 	public Long getCodigo() {
 		return codigo;
@@ -24,10 +24,10 @@ public class Usuario {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	public String getSennha() {
-		return sennha;
+	public String getSenha() {
+		return senha;
 	}
-	public void setSennha(String sennha) {
-		this.sennha = sennha;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}	
 }

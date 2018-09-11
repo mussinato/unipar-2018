@@ -13,7 +13,7 @@ public class GenericDAO<T> {
 	private Session session;
 
 	public GenericDAO() {
-		em = Conexao.getConexao(); 
+		em = Conexao.getConexao();
 		session = em.unwrap(Session.class);
 	}
 	

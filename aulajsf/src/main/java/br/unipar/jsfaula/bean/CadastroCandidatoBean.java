@@ -18,7 +18,6 @@ public class CadastroCandidatoBean {
 	private Candidato candidato = new Candidato();
 	
 	public CadastroCandidatoBean() {
-		System.out.println("Executando construtor CadastroCandidatoBean");
 		Map<String, String> params = FacesContext.getCurrentInstance()
 											.getExternalContext()
 											.getRequestParameterMap();

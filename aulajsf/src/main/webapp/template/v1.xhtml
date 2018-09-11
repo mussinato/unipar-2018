@@ -14,18 +14,19 @@
 	<h:form>
 		<div class="content-left">
 			<p:menu style="width: 95%;"  toggleable="true">
-				<p:menuitem value="Página Inicial" action="index.xhtml" />
+				<p:menuitem value="Página Inicial" action="/restrito/index.xhtml" immediate="true" />
+				<p:menuitem value="Sair do Sistema" action="#{loginBean.logout}"  immediate="true"/>
 				<p:submenu label="Candidato">
-					<p:menuitem value="Cadastrar" action="cadastro-candidato.xhtml" />
-					<p:menuitem value="Listar" action="listar-candidato.xhtml" />
+					<p:menuitem value="Cadastrar" action="/restrito/cadastro-candidato.xhtml" immediate="true" />
+					<p:menuitem value="Listar" action="/restrito/listar-candidato.xhtml" immediate="true" />
 				</p:submenu>
 				<p:submenu label="Eleições">
-					<p:menuitem value="Cadastrar" action="cadastro-eleicao.xhtml" />
-					<p:menuitem value="Listar" action="listar-eleicao.xhtml" />
+					<p:menuitem value="Cadastrar" action="/restrito/cadastro-eleicao.xhtml" immediate="true" />
+					<p:menuitem value="Listar" action="/restrito/listar-eleicao.xhtml" immediate="true" />
 				</p:submenu>
 				<p:submenu label="Links">
 					<p:menuitem value="Tela de votação" target="_blank" 
-						url="votacao.xhtml" />
+						url="/votacao.xhtml" immediate="true" />
 				</p:submenu>
 			</p:menu>
 		</div>
