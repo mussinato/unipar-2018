@@ -26,4 +26,13 @@
 		<welcome-file>login.xhtml</welcome-file>
 	</welcome-file-list>
 
+	<filter>
+		<filter-name>FiltroLogin</filter-name>
+		<filter-class>br.unipar.jsfaula.bean.filter.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FiltroLogin</filter-name>
+		<url-pattern>/restrito/*</url-pattern>
+	</filter-mapping>
+
 </web-app>

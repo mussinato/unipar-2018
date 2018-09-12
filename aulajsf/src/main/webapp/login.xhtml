@@ -12,9 +12,9 @@
 <h:body>
 	<h:form>
 		<h1>LOGIN | URNIPAR</h1>
-		<p:inputText value="#{loginBean.usuario}" />
+		<p:inputText value="#{loginBean.usuario}" placeholder="Usuário" />
 		<br/>
-		<p:password value="#{loginBean.senha}" />
+		<p:password value="#{loginBean.senha}" placeholder="Senha" />
 		<br/>
 		<p:commandButton action="#{loginBean.login}" value="Entrar" />
 	</h:form>
