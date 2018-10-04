@@ -5,10 +5,15 @@ import javax.persistence.Persistence;
 
 public class Conexao {
 	
+	private static EntityManager em = null;
+	
 	public static EntityManager getConexao() {
-		System.out.println("Abrindo conexão com o banco");
-		return Persistence
-				.createEntityManagerFactory("AulaPU")
-				.createEntityManager();
+		if (em == null) {
+			System.out.println("Abrindo conexão com o banco");
+			em = Persistence
+					.createEntityManagerFactory("AulaPU")
+					.createEntityManager();
+		}
+		return em;
 	}
 }

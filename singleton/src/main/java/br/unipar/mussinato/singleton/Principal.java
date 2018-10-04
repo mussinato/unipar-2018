@@ -51,6 +51,7 @@ public class Principal {
 			e1.printStackTrace();
 		}
 		
+		System.out.println("Finalizando a aplicação");
 		System.exit(0);
 	}
 }
