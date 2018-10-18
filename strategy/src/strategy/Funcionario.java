@@ -6,35 +6,21 @@ public class Funcionario {
 	public static final int DBA = 3;
 	protected double salarioBase;
 	protected int cargo;
+	private CalcularSalario estrategia;
 	
 	public Funcionario(int cargo, double salarioBase) {
 		this.salarioBase = salarioBase;
 		this.cargo = cargo;
+		
+		if (cargo == DESENVOLVEDOR || cargo == DBA) {
+			estrategia = new CalcularImposto10Ou15();
+		} else if (cargo == GERENTE) {
+			estrategia = new CalcularImposto15Ou20();
+		} 
 	}
 
 	public double calcularSalarioComImposto() {
-		switch (cargo) {
-		case DESENVOLVEDOR:
-			if (salarioBase >= 2000) {
-				return salarioBase * 0.85;
-			} else {
-				return salarioBase * 0.9;
-			}
-		case GERENTE:
-			if (salarioBase >= 3500) {
-				return salarioBase * 0.8;
-			} else {
-				return salarioBase * 0.85;
-			}
-		case DBA:
-			if (salarioBase >= 2000) {
-				return salarioBase * 0.85;
-			} else {
-				return salarioBase * 0.9;
-			}
-		default:
-			throw new RuntimeException("Cargo não encontrado :/");
-		}
+		return estrategia.calcularSalarioComImposto(salarioBase);
 	}
 
 	public double getSalarioBase() {
