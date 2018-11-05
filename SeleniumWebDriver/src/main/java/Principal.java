@@ -11,6 +11,15 @@ public class Principal {
 		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
 		web = new FirefoxDriver();
 		
+		web.get("https://sertosys.com.br/demofinanceiro/?ng=admin/");
+		WebElement elUsuario = web.findElement(By.id("username"));
+		WebElement elSenha = web.findElement(By.id("password"));
+		WebElement elBotaoLogin = web.findElement(By.name("login"));
+		
+		elUsuario.sendKeys("demo@demo.com");
+		elSenha.sendKeys("123456");
+		elBotaoLogin.click();
+		
 		for (int i = 0; i<5; i++) {
 			web.get("<URL DA PAGINA PARA ABRIR>");
 			
