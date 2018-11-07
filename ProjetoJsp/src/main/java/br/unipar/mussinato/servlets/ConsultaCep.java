@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.github.gilbertotorrezan.viacep.se.ViaCEPClient;
+import com.github.gilbertotorrezan.viacep.shared.ViaCEPEndereco;
+
 @WebServlet("/consultaCep")
 public class ConsultaCep extends HttpServlet {
 
@@ -19,6 +22,18 @@ public class ConsultaCep extends HttpServlet {
 		
 		PrintWriter out = resp.getWriter();
 		out.println("<h1>CEP: "+cep+"</h1>");
+		
+		if (cep != null){
+			ViaCEPClient client = new ViaCEPClient();
+			ViaCEPEndereco endereco = client.getEndereco(cep);
+			out.println("Cep: "+endereco.getCep()+"<br/>");
+			out.println("Logradouro: "+endereco.getLogradouro()+"<br/>");
+			out.println("Bairro: "+endereco.getBairro()+"<br/>");
+			out.println("Localidade: "+endereco.getLocalidade()+"<br/>");
+			out.println("Uf: "+endereco.getUf()+"<br/>");
+			out.println("Complemento: "+endereco.getComplemento()+"<br/>");
+			out.println("Ibge: "+endereco.getIbge()+"<br/>");
+		}
 	}
 	
 	@Override

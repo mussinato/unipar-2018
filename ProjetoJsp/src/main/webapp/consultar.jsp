@@ -4,7 +4,7 @@
 <body>
 <%
 	String cep = request.getParameter("cep");
-	
+	 
 	if (cep != null){
 		ViaCEPClient client = new ViaCEPClient();
 		ViaCEPEndereco endereco = client.getEndereco(cep);
