@@ -12,16 +12,8 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Hello World JSP</a>
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sair</a>
-        </li>
-      </ul>
-    </nav>
-
-
+	<%@ include file="/componentes/navbar.jsp" %>
+	
     <h2>Hello World!</h2>
 	<h2><%= helloWorld %></h2>
 	<h3>Parametro: <%= param %></h3>
