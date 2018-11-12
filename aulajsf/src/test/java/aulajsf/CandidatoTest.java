@@ -76,6 +76,7 @@ public class CandidatoTest {
 			Assert.fail();
 		} catch (Exception e) {
 			Assert.assertNotNull(e);
+			Assert.fail();
 		}
 	}
 }
