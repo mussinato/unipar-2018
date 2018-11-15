@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
 		if (usuario != null && usuario.equals("admin@bol.com.br") &&
 				senha != null && senha.equals("123")) {
 			req.getSession().setAttribute("usuarioLogado", usuario);
-			resp.sendRedirect("index.jsp");
+			resp.sendRedirect("restrito/index.jsp");
 		} else {
 			req.getSession().setAttribute("mensagem", 
 					"Usuário e/ou senha inválido(s).");
