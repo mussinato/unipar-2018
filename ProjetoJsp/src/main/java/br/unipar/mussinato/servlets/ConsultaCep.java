@@ -12,17 +12,25 @@ import javax.servlet.http.HttpServletResponse;
 import com.github.gilbertotorrezan.viacep.se.ViaCEPClient;
 import com.github.gilbertotorrezan.viacep.shared.ViaCEPEndereco;
 
-@WebServlet("/consultaCep")
+@WebServlet("/restrito/consultaCep")
 public class ConsultaCep extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String cep = req.getParameter("cep");
-		System.out.println(cep);
 		
 		PrintWriter out = resp.getWriter();
-		out.println("<h1>CEP: "+cep+"</h1>");
+		out.println("<html>");
+		out.println("<head>");
+		req.getRequestDispatcher("/componentes/imp-bootstrap.jsp").include (req,resp);
+		out.println("</head>");
+		out.println("<body>");
+		req.getRequestDispatcher("/componentes/navbar.jsp").include (req,resp);
 		
+		out.println("<main role=\"main\" class=\"container\">");
+		out.println("<br/><br/><br/>");
+		out.println("<a class=\"btn btn-lg btn-primary\" href=\"index.jsp\">Voltar</a>");
+		out.println("<br/><br/>");
 		if (cep != null){
 			ViaCEPClient client = new ViaCEPClient();
 			ViaCEPEndereco endereco = client.getEndereco(cep);
@@ -34,6 +42,10 @@ public class ConsultaCep extends HttpServlet {
 			out.println("Complemento: "+endereco.getComplemento()+"<br/>");
 			out.println("Ibge: "+endereco.getIbge()+"<br/>");
 		}
+		out.println("</main>");
+		out.println("</body>");
+		out.println("</html>");
+		
 	}
 	
 	@Override

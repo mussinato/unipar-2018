@@ -5,7 +5,8 @@
 			String usuarioLogado = (String) session.getAttribute("usuarioLogado");
 			if (usuarioLogado != null){
 				out.print("<li class=\"nav-item text-nowrap\">"+
-						    "<a class=\"nav-link\" href=\"#\">Sair</a>"+
+						    "<a class=\"nav-link\" "+ 
+						    "href=\"logout\">Sair</a>"+
 						  "</li>");				
 			}
 		%>              
